@@ -1,4 +1,6 @@
 const {mongoose} = require('./../db/connection');
+const Joi =require('joi')
+
 
 const PostSchema = new mongoose.Schema({
     postTitle :{
@@ -34,6 +36,21 @@ const PostSchema = new mongoose.Schema({
 
 let Post = mongoose.model('User',PostSchema);
 
+const validate =(entryPost)=>{
+    const schema = {
+        postTitle : Joi.string().required(),
+        postDate: Joi.string(),
+        postImageUrl: Joi.string(),
+        postContent : Joi.string().required(),
+        postTags: Joi.array(),
+        like: Joi.number(),
+
+    };
+
+    return Joi.validate(entryPost,schema)
+};
+
+
 module.exports={
-  Post
+  Post,validate
 };
