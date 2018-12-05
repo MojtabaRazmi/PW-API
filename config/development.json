@@ -1,0 +1,4 @@
+{
+  "PORT" : 3231,
+  "MONGOURI" :"mongodb://localhost:27017/pw_db"
+}
