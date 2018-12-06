@@ -2,11 +2,15 @@ require('./db/connection');
 
 const express = require('express');
 const createPostRoute = require('./routes/createPost');
+const getPostRoute = require('./routes/getPosts');
+const deletePostRoute = require('./routes/deletePost');
 
 const app = express();
 app.use(express.json());
 
 app.use('/api/create-posts',createPostRoute);
+app.use('/api/get-Posts',getPostRoute);
+app.use('/api/delete-post',deletePostRoute);
 
 const port = process.env.PORT || 3900;
 

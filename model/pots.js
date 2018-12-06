@@ -1,6 +1,8 @@
 const {mongoose} = require('./../db/connection');
-const Joi =require('joi')
+const Joi =require('joi');
+const persianDate = require('persian-date');
 
+persianDate.toLocale('fa');
 
 const PostSchema = new mongoose.Schema({
     postTitle :{
@@ -12,6 +14,7 @@ const PostSchema = new mongoose.Schema({
         required: false,
         type: String,
         trim:true,
+        default: new persianDate().format('YYYY/MM/DD')
     },
     postImageUrl : {
         required: false,
