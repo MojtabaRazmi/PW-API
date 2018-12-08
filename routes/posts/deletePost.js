@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {Post} = require('./../model/pots');
+const {Post} = require('../../model/pots');
 
 router.delete('/:id',async (req,res)=>{
     const editedPost = await Post.findByIdAndDelete(req.params.id);

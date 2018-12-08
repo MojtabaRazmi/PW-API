@@ -37,7 +37,7 @@ const PostSchema = new mongoose.Schema({
     }
 });
 
-let Post = mongoose.model('User',PostSchema);
+let Post = mongoose.model('Post',PostSchema);
 
 const validate =(entryPost)=>{
     const schema = {

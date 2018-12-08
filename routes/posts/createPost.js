@@ -1,12 +1,12 @@
 const express =require('express');
 const router = express.Router();
-const {Post,validate}= require('./../model/pots');
+const {Post,validate}= require('../../model/pots');
 
 router.post('/',async (req,res)=>{
     const {e} = validate(req.body);
 
     if(e){
-        return res.status(400).send(`validation get some error ${e}`)
+        return res.status(400).send(e.details[0].message)
     }
     let post = new Post({
         postTitle : req.body.postTitle,

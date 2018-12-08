@@ -1,7 +1,6 @@
 const express = require('express');
 const router =express.Router();
-const {Post} = require('./../model/pots');
-
+const {Post} = require('../../model/pots');
 
 router.get('/', async (req,res)=>{
     const foundedPost =await Post.find();
