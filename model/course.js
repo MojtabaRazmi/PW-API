@@ -1,5 +1,5 @@
 const {mongoose} = require('./../db/connection');
-const joi = require('joi');
+const Joi = require('joi');
 
 const CourseSchema = new mongoose.Schema({
     courseTitle: {
@@ -27,13 +27,13 @@ const CourseSchema = new mongoose.Schema({
 
 const validate = course => {
     const schema = {
-        courseTitle: joi.string().required(),
-        courseImageUrl: joi.string(),
-        courseTime: joi.string().required(),
-        coursePrice: joi.number().required()
+        courseTitle: Joi.string().required(),
+        courseImageUrl: Joi.string(),
+        courseTime: Joi.string().required(),
+        coursePrice: Joi.number().required()
     };
 
-    return joi.validate(course, schema)
+    return Joi.validate(course, schema)
 };
 
 const Course = mongoose.model('Course', CourseSchema);

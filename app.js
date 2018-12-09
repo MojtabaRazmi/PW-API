@@ -5,9 +5,12 @@ const createPostRoute = require('./routes/posts/createPost');
 const getPostRoute = require('./routes/posts/getPosts');
 const deletePostRoute = require('./routes/posts/deletePost');
 const editPostRoute = require('./routes/posts/editPost');
-const getOnePostRoute = require('./routes/posts/getOnePost');
 const getCoursesRoute = require('./routes/courses/getCourses');
 const createCoursesRoute = require('./routes/courses/createCourse');
+const deleteCourseRoute = require('./routes/courses/deleteCourse');
+const editCourseRoute = require('./routes/courses/editCourse');
+const countCourseRoute = require('./routes/posts/getPostCount');
+
 
 const app = express();
 app.use(express.json());
@@ -16,9 +19,12 @@ app.use('/api/create-posts',createPostRoute);
 app.use('/api/get-Posts',getPostRoute);
 app.use('/api/delete-post',deletePostRoute);
 app.use('/api/edit-post',editPostRoute);
-app.use('/api/getOne-posts',getOnePostRoute);
 app.use('/api/get-courses',getCoursesRoute);
 app.use('/api/create-course',createCoursesRoute);
+app.use('/api/delete-course',deleteCourseRoute);
+app.use('/api/edit-course',editCourseRoute);
+app.use('/api/count-post',countCourseRoute);
+
 
 const port = process.env.PORT || 3900;
 
