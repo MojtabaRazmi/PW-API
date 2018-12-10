@@ -9,7 +9,9 @@ const getCoursesRoute = require('./routes/courses/getCourses');
 const createCoursesRoute = require('./routes/courses/createCourse');
 const deleteCourseRoute = require('./routes/courses/deleteCourse');
 const editCourseRoute = require('./routes/courses/editCourse');
-const countCourseRoute = require('./routes/posts/getPostCount');
+const countPostRoute = require('./routes/posts/getPostCount');
+const countCourseRoute = require('./routes/courses/getCourseCount');
+const likePostRoute = require('./routes/posts/likePost');
 
 
 const app = express();
@@ -23,7 +25,10 @@ app.use('/api/get-courses',getCoursesRoute);
 app.use('/api/create-course',createCoursesRoute);
 app.use('/api/delete-course',deleteCourseRoute);
 app.use('/api/edit-course',editCourseRoute);
-app.use('/api/count-post',countCourseRoute);
+app.use('/api/count-post',countPostRoute);
+app.use('/api/count-course',countCourseRoute);
+app.use('/api/like-post',likePostRoute);
+
 
 
 const port = process.env.PORT || 3900;

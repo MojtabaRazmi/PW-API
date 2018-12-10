@@ -30,9 +30,7 @@ const PostSchema = new mongoose.Schema({
             String
         ],
     like : {
-        required: false,
         type: Number,
-        trim:true,
         default :0,
     }
 });
